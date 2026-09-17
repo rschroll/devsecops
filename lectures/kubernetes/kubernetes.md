@@ -866,7 +866,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: web-deployment
-  namespace: default
+  namespace: dso-project
   labels:
     app: web-service
 spec:
@@ -1127,7 +1127,7 @@ Add another YAML document to `web-service.yaml`
 <div class="columns">
 <div>
 
-```yaml {8-9,13}
+```yaml {9-10,14}
 ---
 apiVersion: v1
 kind: Service
