@@ -1455,7 +1455,7 @@ clusterConfig:
         - visitors
 ```
 
-Full file at `reference/services/garage.yaml`
+Full file at `reference/helm/garage.yaml`
 
 <!--
 Got these values mostly from the documentation.  And some trial-and-error.
