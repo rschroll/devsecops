@@ -30,6 +30,14 @@ spec:
           env:
             - name: OLLAMA_URL
               value: "http://ollama-service.dso-project.svc.cluster.local:11434"
+            - name: AWS_ENDPOINT_URL
+              value: "http://garage.garage.svc.cluster.local:3900"
+            - name: AWS_ACCESS_KEY_ID
+              value: GK0123456789ABCDEF01234567
+            - name: AWS_SECRET_ACCESS_KEY
+              value: 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+            - name: VISIT_COUNTER_FILE
+              value: "s3://visitors/visit.txt"
 ---
 apiVersion: v1
 kind: Service
