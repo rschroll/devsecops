@@ -1,0 +1,7 @@
+unit-test:
+  image: ghcr.io/astral-sh/uv:python3.14-alpine
+  script:
+    - cd project/images/web-service/
+    - echo "Installing dependencies and running tests..."
+    - uv sync
+    - uv run pytest -v tests/test_unit.py
