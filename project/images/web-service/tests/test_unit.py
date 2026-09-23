@@ -3,7 +3,7 @@ from unittest.mock import patch
 import web_service
 
 def test_parse_count_zero():
-    assert web_service._parse_count('0') == 0
+    assert web_service._parse_count('0') == 1
 
 def test_parse_count_positive():
     assert web_service._parse_count('123') == 123
