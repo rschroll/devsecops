@@ -7,7 +7,7 @@ variables:
   UV_LINK_MODE: copy
   
 unit-test:
-  state: test
+  stage: test
   image: $UV_IMAGE
   script:
     - cd project/images/web-service/
@@ -16,7 +16,7 @@ unit-test:
     - uv run pytest -v tests/test_unit.py
 
 lint:
-  state: test
+  stage: test
   image: $UV_IMAGE
   script:
     - cd project/images/web-service
@@ -24,7 +24,7 @@ lint:
     - uv run ruff check src/
 
 validate-k8s-manifests:
-  state: test
+  stage: test
   script:
     - |
       curl -Lo kubeconform.tar.gz \
@@ -33,7 +33,7 @@ validate-k8s-manifests:
     - ./kubeconform -summary project/services
 
 integration-test:
-  state: test
+  stage: test
   image: $UV_IMAGE
 
   services:
