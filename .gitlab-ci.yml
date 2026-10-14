@@ -84,8 +84,8 @@ build-image:
     - IMAGE_TAG=$IMAGE_NAME:$(git rev-parse HEAD:project/images/web-service)
     - echo "IMAGE_TAG=${IMAGE_TAG}" >> build.env
     - echo "Building image ${IMAGE_TAG}"
-    - docker build project/images/web-service -t web-service
-    - docker save -o web-service.tar web-service:latest
+    - docker build project/images/web-service -t ${IMAGE_TAG}
+    - docker save -o web-service.tar ${IMAGE_TAG}
   artifacts:
     name: "docker-image-$CI_COMMIT_SHORT_SHA"
     paths:
