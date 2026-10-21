@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: dso-application
+  namespace: argocd
+spec:
+  destination:
+    namespace: dso-project
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: project/services
+    repoURL: https://gitlab.com/pragdata/devsecops.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      enabled: true
+    syncOptions:
+      - createNamespace=true
