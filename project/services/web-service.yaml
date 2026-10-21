@@ -14,7 +14,7 @@ spec:
   selector:
     matchLabels:
       app: web-service
-  replicas: 3
+  replicas: 2
   template:
     metadata:
       labels:
